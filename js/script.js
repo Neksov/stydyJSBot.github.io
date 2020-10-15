@@ -4,26 +4,25 @@ let isNumber = function(n){ //проверка входящих prompt
   return !isNaN(parseFloat(n)) && isFinite(n)
 };
 
-let b;
+function start(){
+  let numberRandom = parseInt(Math.random()*100);
+  console.dir(numberRandom);
 
-let start = function(){
-  let a = 50;
-  b = +prompt('Угадай число от 1 до 100');
-  if(isNumber(b) || b === 0){
-    number();
-    console.log(b);
+  function sayNumber(){
+    let say = prompt('Угадай число от 1 до 100');
+  if(isNumber(numberRandom)){ 
+    if(say > numberRandom){
+    say = prompt('Повторите');
+    alert('Загаданное число меньше');
+    }else if(say < numberRandom){
+    say = prompt('Повторите');
+    alert('Загаданное число больше');
+    }else if(say == numberRandom){
+    alert('Поздравляю, Вы угадали!!!');
+    }
   }else
-  console.log('Введите число ')
+  alert('Введите число');
+  }
+  sayNumber();
 };
 start();
-
-function number(){
-  if(b>50){
-    console.log('Загаданное число меньше');
-    b = +prompt('Попробуйте еще раз');
-  } else if(b<50){
-    console.log('Загаданное число меньше');
-    b = +prompt('Попробуйте еще раз');
-  }else (b === a)
-  console.log('Поздравляю, Вы угадали!!!');
-}
