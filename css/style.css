@@ -30,4 +30,17 @@ body {
   color: #fff;
   border: none;
   cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.button:hover{
+  background-color: #fff;
+  color:red;
+}
+
+.button:focus{
+  outline: none;
 }

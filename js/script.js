@@ -12,8 +12,10 @@ function start(){
     let say = prompt('Угадай число от 1 до 100');
   if(isNumber(numberRandom)){ 
     if(say > numberRandom){
+
     say = prompt('Повторите');
     alert('Загаданное число меньше');
+
     }else if(say < numberRandom){
     say = prompt('Повторите');
     alert('Загаданное число больше');
@@ -25,4 +27,3 @@ function start(){
   }
   sayNumber();
 };
-start();
