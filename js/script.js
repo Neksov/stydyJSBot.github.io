@@ -8,8 +8,9 @@ console.log(numberRandom);
 
 function start(){
   let say = prompt('Угадай число от 1 до 100');
+
   function sayNumber(){
-  if(isNumber(say) || say === 0){ 
+  if(isNumber(say)){ 
     if(say > numberRandom){
       alert('Загаданное число меньше');
       repeat();
@@ -24,12 +25,14 @@ function start(){
   }else if (say !== 'number'){
     alert('Введите число');
     repeat();
-  }
+  }else (say === null)
+    alert('Игра окончена');
 };
-sayNumber();
 
+sayNumber();
 };
-function repeat(){
+
+function repeat(){//функция повтора
   let say = prompt('Повторите');
     if(say > numberRandom){
       alert('Загаданное число меньше');
@@ -38,4 +41,4 @@ function repeat(){
     }else if(say == numberRandom){
       alert('Поздравляю, Вы угадали!!!Закаданное число ' + numberRandom);
     }
-}
+};
