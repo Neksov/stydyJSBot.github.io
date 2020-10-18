@@ -29,7 +29,6 @@ function start() {
     else (say === null)
       alert('Игра окончена.');
     };
-
   sayNumber();
 };
 
@@ -41,7 +40,7 @@ function repeat() {//функция повтора
   } else if (say < numberRandom) {
     alert('Загаданное число больше');
   } else if (say == numberRandom) {
-    alert('Поздравляю, Вы угадали!!! Закаданное число ' + numberRandom);
+    alert('Поздравляю, Вы угадали!!! Загаданное число ' + numberRandom);
   // break;
   }
   // say += i;
