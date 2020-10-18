@@ -4,11 +4,12 @@ let isNumber = function (n) { //проверка входящих prompt
   return !isNaN(parseFloat(n)) && isFinite(n)
 };
 
-let numberRandom = parseInt(Math.random() * 100);//загаданное число
-console.log(numberRandom);
-
 function start() {
+  let numberRandom = parseInt(Math.random() * 100);//загаданное число
+  console.log(numberRandom);
+  
   let say = prompt('Угадай число от 1 до 100');
+
   function sayNumber() {
     if (isNumber(say)) {
       if (say > numberRandom) {
@@ -27,26 +28,24 @@ function start() {
       repeat();}
   };
 
+  function repeat() {//функция повтора
+    // for (let i = 0; i < 3; i++) {
+      let say = prompt('Повторите');
+      if (say > numberRandom) {
+        alert('Загаданное число меньше');
+        alert('Правильное число: ' + numberRandom);
+      } else if (say < numberRandom) {
+        alert('Загаданное число больше');
+        alert('Правильное число: ' + numberRandom);
+      } else if (say == numberRandom) {
+        alert('Поздравляю, Вы угадали!!! Загаданное число ' + numberRandom);
+      // break;
+      }
+    // say += i;
+    // }
+    };
+
 sayNumber();
+
 };
 
-function repeat() {//функция повтора
-// for (let i = 0; i < 3; i++) {
-  let say = prompt('Повторите');
-  if (say > numberRandom) {
-    alert('Загаданное число меньше');
-    alert('Правильное число: ' + numberRandom);
-  } else if (say < numberRandom) {
-    alert('Загаданное число больше');
-    alert('Правильное число: ' + numberRandom);
-  } else if (say == numberRandom) {
-    alert('Поздравляю, Вы угадали!!! Загаданное число ' + numberRandom);
-  // break;
-  }
-// say += i;
-// }
-};
-
-// else if (say != 'number') {
-// alert('Введите число');
-// }
