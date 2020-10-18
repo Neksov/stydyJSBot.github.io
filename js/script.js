@@ -12,39 +12,39 @@ function start() {
   function sayNumber() {
     if (isNumber(say)) {
       if (say > numberRandom) {
-        alert('Загаданное число меньше');
-        repeat();
-        alert('Правильное число: ' + numberRandom);
+          alert('Загаданное число меньше');
+          repeat();
       } else if (say < numberRandom) {
-        alert('Загаданное число больше');
-        repeat();
-        alert('Правильное число: ' + numberRandom);
+          alert('Загаданное число больше');
+          repeat();
       } else if (say == numberRandom) {
-        alert('Поздравляю, Вы угадали!!! Загаданное число ' + numberRandom);
-      }
-      } else if (say != 'number') {
-        alert('Введите число');
-        repeat();
-      }
-    else (say === null)
+          alert('Поздравляю, Вы угадали!!! Загаданное число ' + numberRandom);
+      } 
+    }else if (say === null) {
       alert('Игра окончена.');
-    };
-  sayNumber();
+    }else if(say != 'number'){
+      alert('Введите число');
+      repeat();}
+  };
+
+sayNumber();
 };
 
 function repeat() {//функция повтора
-  // for (let i = 0; i < 10; i++) {
-    let say = prompt('Повторите');
+// for (let i = 0; i < 3; i++) {
+  let say = prompt('Повторите');
   if (say > numberRandom) {
     alert('Загаданное число меньше');
+    alert('Правильное число: ' + numberRandom);
   } else if (say < numberRandom) {
     alert('Загаданное число больше');
+    alert('Правильное число: ' + numberRandom);
   } else if (say == numberRandom) {
     alert('Поздравляю, Вы угадали!!! Загаданное число ' + numberRandom);
   // break;
   }
-  // say += i;
-  // }
+// say += i;
+// }
 };
 
 // else if (say != 'number') {
