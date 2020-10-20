@@ -7,44 +7,50 @@ let isNumber = function (n) { //проверка входящих prompt
 function start() {
   let numberRandom = parseInt(Math.random() * 100);//загаданное число
   console.log(numberRandom);
-  
-  let say = prompt('Угадай число от 1 до 100');
 
   function sayNumber() {
+    let say = prompt('Угадай число от 1 до 100');
+
     if (isNumber(say)) {
       if (say > numberRandom) {
           alert('Загаданное число меньше');
           repeat();
+          alert('Правильное число: ' + numberRandom);
       } else if (say < numberRandom) {
           alert('Загаданное число больше');
           repeat();
+          alert('Правильное число: ' + numberRandom);
       } else if (say == numberRandom) {
-          alert('Поздравляю, Вы угадали!!! Загаданное число ' + numberRandom);
+          confirm('Поздравляю, Вы угадали!!! Загаданное число ' + numberRandom + ' Хотели бы сыграть еще?');
+          // start();
       } 
-    }else if (say === null) {
+    }else if (say == null) {
       alert('Игра окончена.');
     }else if(say != 'number'){
       alert('Введите число');
-      repeat();}
+      repeat();
+      alert('Правильное число: ' + numberRandom);
+    }
   };
 
   function repeat() {//функция повтора
-    // for (let i = 0; i < 3; i++) {
+    for (let i = 3; i >= 0; i--) {
       let say = prompt('Повторите');
       if (say > numberRandom) {
-        alert('Загаданное число меньше');
-        alert('Правильное число: ' + numberRandom);
+        alert('Загаданное число меньше, осталось попыток - '+ [i]);
       } else if (say < numberRandom) {
-        alert('Загаданное число больше');
-        alert('Правильное число: ' + numberRandom);
+        alert('Загаданное число больше, осталось попыток - ' + [i]);
       } else if (say == numberRandom) {
-        alert('Поздравляю, Вы угадали!!! Загаданное число ' + numberRandom);
-      // break;
+        confirm('Поздравляю, Вы угадали!!! Загаданное число ' + numberRandom + ' Хотели бы сыграть еще?');
+        // start();
+      } else if(say != 'number'){
+        alert('Введите число, осталось попыток - ' + [i]);
+      } else if (say == null) {
+        alert('Игра окончена.');
       }
-    // say += i;
-    // }
-    };
-
+    say += i;
+    }
+  };
 sayNumber();
 
 };
