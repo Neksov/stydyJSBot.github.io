@@ -29,7 +29,6 @@ function start() {
   };
 
   function repeat() {//функция повтора
-    // for (let i = 0; i < 3; i++) {
       let say = prompt('Повторите');
       if (say > numberRandom) {
         alert('Загаданное число меньше');
@@ -39,10 +38,7 @@ function start() {
         alert('Правильное число: ' + numberRandom);
       } else if (say == numberRandom) {
         alert('Поздравляю, Вы угадали!!! Загаданное число ' + numberRandom);
-      // break;
       }
-    // say += i;
-    // }
     };
 
 sayNumber();
